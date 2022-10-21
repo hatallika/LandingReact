@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import logo from '../images/logo.svg';
-
+import * as svg from '../images/svg_icons'
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -14,41 +14,45 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground);
     return (
         <nav className={nav ? 'nav active': 'nav'}>
-            <a href="#" className='logo'>
-                <img src={logo} alt="" width={36} height={36} />
-            </a>
-            <input type="checkbox" className='menu-btn' id='menu-btn'/>
-            <label className='menu-icon' for='menu-btn'>
-                <span className='nav-icon'></span>
-            </label>
-            <ul className='menu'>
-                <li><a href="#" className="active">Обо мне</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Бланки</a></li>
-                <li><a href="#">Протоколы</a></li>
-            </ul>
-            <div className='social-icons'>
-                <a href="#" className='social-icons__twitter'>
-                    <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 1.92417C19.2642 2.25083 18.4733 2.47083 17.6433 2.57C18.4908 2.0625 19.1417 1.25833 19.4475 0.3C18.655 0.77 17.7767 1.11167 16.8417 1.29583C16.0942 0.498333 15.0267 0 13.8467 0C11.1975 0 9.25083 2.47167 9.84917 5.0375C6.44 4.86667 3.41667 3.23333 1.3925 0.750833C0.3175 2.595 0.835 5.0075 2.66167 6.22917C1.99 6.2075 1.35667 6.02333 0.804167 5.71583C0.759167 7.61667 2.12167 9.395 4.095 9.79083C3.5175 9.9475 2.885 9.98417 2.24167 9.86083C2.76333 11.4908 4.27833 12.6767 6.075 12.71C4.35 14.0625 2.17667 14.6667 0 14.41C1.81583 15.5742 3.97333 16.2533 6.29 16.2533C13.9083 16.2533 18.2125 9.81917 17.9525 4.04833C18.7542 3.46917 19.45 2.74667 20 1.92417Z" fill="#95A1BB"/>
-                    </svg>
+            <div className='menu-wrap'>
+                <a href="#" className='logo'>
+                    <img src={logo} alt="" width={36} height={36}/>
                 </a>
-                <a href="#" className='social-icons__instagram'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 1C8.64838 1 8.29137 1.01225 7.17137 1.063C3.35812 1.238 1.23888 3.35375 1.06387 7.1705C1.01225 8.29137 1 8.64838 1 11.5C1 14.3516 1.01225 14.7095 1.063 15.8295C1.238 19.6427 3.35375 21.762 7.1705 21.937C8.29137 21.9878 8.64838 22 11.5 22C14.3516 22 14.7095 21.9878 15.8295 21.937C19.6392 21.762 21.7638 19.6462 21.9361 15.8295C21.9877 14.7095 22 14.3516 22 11.5C22 8.64838 21.9878 8.29137 21.937 7.17137C21.7655 3.36162 19.6471 1.23888 15.8304 1.06387C14.7095 1.01225 14.3516 1 11.5 1ZM11.5 2.89262C14.3035 2.89262 14.636 2.90312 15.7438 2.95387C18.5893 3.08337 19.9184 4.4335 20.0479 7.258C20.0986 8.36487 20.1082 8.69737 20.1082 11.5009C20.1082 14.3052 20.0977 14.6369 20.0479 15.7437C19.9175 18.5656 18.5919 19.9184 15.7438 20.0479C14.636 20.0986 14.3052 20.1091 11.5 20.1091C8.6965 20.1091 8.364 20.0986 7.25712 20.0479C4.40462 19.9175 3.0825 18.5613 2.953 15.7429C2.90225 14.636 2.89175 14.3044 2.89175 11.5C2.89175 8.6965 2.90312 8.36487 2.953 7.25712C3.08337 4.4335 4.409 3.0825 7.25712 2.953C8.36487 2.90312 8.6965 2.89262 11.5 2.89262ZM6.10825 11.5C6.10825 8.52238 8.52238 6.10825 11.5 6.10825C14.4776 6.10825 16.8918 8.52238 16.8918 11.5C16.8918 14.4785 14.4776 16.8926 11.5 16.8926C8.52238 16.8926 6.10825 14.4776 6.10825 11.5ZM11.5 15C9.56713 15 8 13.4338 8 11.5C8 9.56713 9.56713 8 11.5 8C13.4329 8 15 9.56713 15 11.5C15 13.4338 13.4329 15 11.5 15ZM15.8444 5.89563C15.8444 5.2 16.4087 4.63562 17.1052 4.63562C17.8009 4.63562 18.3644 5.2 18.3644 5.89563C18.3644 6.59125 17.8009 7.15562 17.1052 7.15562C16.4087 7.15562 15.8444 6.59125 15.8444 5.89563Z" fill="#95A1BB"/>
-                    </svg>
+                <input type="checkbox" className='menu-btn' id='menu-btn'/>
+                <label className='menu-icon' htmlFor='menu-btn'>
+                    <span className='nav-icon'></span>
+                </label>
+                <ul className='menu'>
+                    <li><a href="#" className="active">Обо мне</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Бланки</a></li>
+                    <li><a href="#">Протоколы</a></li>
+                </ul>
+            </div>
+
+            <div className='social'>
+                <a href="#" className='social-icons social-icons__twitter'>
+                    {svg.socialTwitter}
                 </a>
-                <a href="#" className='social-icons__facebook'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.2944 22V14.7747H17.9873L18.3905 11.6481H15.2944V9.65192C15.2944 8.74669 15.5458 8.1298 16.8439 8.1298L18.4995 8.12908V5.33259C18.2132 5.29449 17.2304 5.20936 16.087 5.20936C13.6999 5.20936 12.0656 6.66644 12.0656 9.34227V11.6481H9.36584V14.7747H12.0656V22H4C2.89543 22 2 21.1046 2 20L2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H15.2944Z" fill="#95A1BB"/>
-                    </svg>
+                <a href="#" className='social-icons social-icons__instagram'>
+                    {svg.socialInstagram}
+                </a>
+                <a href="#" className='social-icons social-icons__facebook'>
+                    {svg.socialFacebook}
                 </a>
             </div>
-            <ul className='menu-last'>
+
+            <div>
+                <input type="checkbox" className='menu-auth-btn' id='menu-auth-btn'/>
+                <label className='menu-auth-icon' htmlFor='menu-auth-btn'>
+                    <span className='nav-icon'>{svg.profileIcon}</span>
+                </label>
+            <ul className='menu-auth'>
                 <li><a href="#" >Вход</a></li>
                 <li><a href="#">Контакты</a></li>
                 <li><a href="#">Регистрация</a></li>
             </ul>
+            </div>
 
         </nav>
     );

@@ -6,9 +6,12 @@ const Header = () => {
         <div id='main'>
             <Navbar/>
             <div className="name">
-                <h1>Launch you app <span>With Confidence And Creativity</span></h1>
-                <p className="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, sapiente?</p>
-                <a href="#" className={'cv-btn'}>Download</a>
+                <h1 className="name-title">Антипротокол</h1>
+                <div className="name-button">
+                    <button  className={'cv-btn cv-btn--one'}>Купить сейчас</button>
+                    <button  className={'cv-btn cv-btn--second'}>Бесплатный контент</button>
+                </div>
+
             </div>
         </div>
     );
